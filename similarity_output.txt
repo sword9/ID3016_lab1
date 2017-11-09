@@ -1,0 +1,30 @@
+LSH => Rating: 0.30769232 DocumentA:921a93a066d1c9d4fe04467ec3ba50eaed997abc Document B:5ed898344bf96bfed4690446a7fc9d5b46f4109e
+LSH => Rating: 0.30769232 DocumentA:5ed898344bf96bfed4690446a7fc9d5b46f4109e Document B:921a93a066d1c9d4fe04467ec3ba50eaed997abc
+LSH => Rating: 0.30769232 DocumentA:48d75a44d402ce5bc5432f9426c5fb4908e59b59 Document B:3217ff7c95ee09a60e38059bb74acc1c02cee33a
+LSH => Rating: 0.30769232 DocumentA:3217ff7c95ee09a60e38059bb74acc1c02cee33a Document B:48d75a44d402ce5bc5432f9426c5fb4908e59b59
+LSH => Rating: 0.115384616 DocumentA:dd8059ba75f31285da1fcc2cf595bf7124b86916 Document B:ba84beed5b246b2a659a1fc111345299f19f62f9
+LSH => Rating: 0.115384616 DocumentA:c5ade3bfdb79d8459ef6da514da0c313031efd4e Document B:4545c210c2195a0c37ba3727ac2c0a6f4403bb1f
+LSH => Rating: 0.115384616 DocumentA:bdf5838a85b26c90551279030a60e345be3e6fb8 Document B:3217ff7c95ee09a60e38059bb74acc1c02cee33a
+LSH => Rating: 0.115384616 DocumentA:ba84beed5b246b2a659a1fc111345299f19f62f9 Document B:dd8059ba75f31285da1fcc2cf595bf7124b86916
+LSH => Rating: 0.115384616 DocumentA:4545c210c2195a0c37ba3727ac2c0a6f4403bb1f Document B:c5ade3bfdb79d8459ef6da514da0c313031efd4e
+LSH => Rating: 0.115384616 DocumentA:3217ff7c95ee09a60e38059bb74acc1c02cee33a Document B:bdf5838a85b26c90551279030a60e345be3e6fb8
+
+MinHASH => Rating: 0.41 DocumentA:921a93a066d1c9d4fe04467ec3ba50eaed997abc Document B:5ed898344bf96bfed4690446a7fc9d5b46f4109e
+MinHASH => Rating: 0.41 DocumentA:5ed898344bf96bfed4690446a7fc9d5b46f4109e Document B:921a93a066d1c9d4fe04467ec3ba50eaed997abc
+MinHASH => Rating: 0.41 DocumentA:48d75a44d402ce5bc5432f9426c5fb4908e59b59 Document B:3217ff7c95ee09a60e38059bb74acc1c02cee33a
+MinHASH => Rating: 0.41 DocumentA:3217ff7c95ee09a60e38059bb74acc1c02cee33a Document B:48d75a44d402ce5bc5432f9426c5fb4908e59b59
+
+Jaccard => Rating: 0.027777778 DocumentA:fbb518edb1bdc590ebe17a2a6aa53596bd134f53 Document B:be6a8f4d60fb596bd3eefcf796adb6f29da14f9c
+Jaccard => Rating: 0.027777778 DocumentA:fa80be6a23cf433009af235abec46a9b6191a0f8 Document B:09af256141ec9784eaa07f14ad22239759ac2f1c
+Jaccard => Rating: 0.027777778 DocumentA:fa58823229f8079cd9c6c920060e1736bb4d75f4 Document B:cc07fed4752fd6bb060e1fa90fcc4c843bb67e05
+Jaccard => Rating: 0.027777778 DocumentA:dd8059ba75f31285da1fcc2cf595bf7124b86916 Document B:3217ff7c95ee09a60e38059bb74acc1c02cee33a
+Jaccard => Rating: 0.027777778 DocumentA:cc07fed4752fd6bb060e1fa90fcc4c843bb67e05 Document B:fa58823229f8079cd9c6c920060e1736bb4d75f4
+Jaccard => Rating: 0.027777778 DocumentA:c49f00fcb186431db67d5e74cc8fa71f1dfb1081 Document B:008e20a5b59b90c8fa55d0687f01dfb786b03089
+Jaccard => Rating: 0.027777778 DocumentA:be6a8f4d60fb596bd3eefcf796adb6f29da14f9c Document B:fbb518edb1bdc590ebe17a2a6aa53596bd134f53
+Jaccard => Rating: 0.027777778 DocumentA:bdf5838a85b26c90551279030a60e345be3e6fb8 Document B:3217ff7c95ee09a60e38059bb74acc1c02cee33a
+Jaccard => Rating: 0.027777778 DocumentA:3217ff7c95ee09a60e38059bb74acc1c02cee33a Document B:dd8059ba75f31285da1fcc2cf595bf7124b86916
+Jaccard => Rating: 0.027777778 DocumentA:3217ff7c95ee09a60e38059bb74acc1c02cee33a Document B:bdf5838a85b26c90551279030a60e345be3e6fb8
+
+
+
+curl -H accept:application/json -H content-type:application/json -u neo4j:e22771cd4e6682cdca242e34769a66c1ac5089ea -d '{"statements":[{"statement":"MATCH (n:Job) RETURN n.description, n.consistency"}]}' http://52.215.255.175:7474/db/data/transaction/commit > descriptions.json
