@@ -9,7 +9,7 @@ class Shingling (k:Int, doc:(String, String))  extends Serializable {
   val key = doc._1
 
   def grab(): Unit ={
-    val desc = doc._1
+    val desc = doc._2
 
     desc.sliding(k, 1).foreach(pt => {
       shingles += pt.hashCode

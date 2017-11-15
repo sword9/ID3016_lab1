@@ -54,6 +54,7 @@ object Main {
       new Document(key, shingling)
     }).persist(StorageLevel.MEMORY_AND_DISK)
 
+
     //Calculate the Jaccard rating
     val jaccardRating = documentRdd.cartesian(documentRdd).filter((f: (Document, Document)) => {
       f._1.getKey().hashCode < f._2.getKey().hashCode
@@ -67,12 +68,14 @@ object Main {
       println("Jaccard => Rating: " + f._1 + " DocumentA:" + f._2 + " Document B:" + f._3)
     })
 
+
     //Do the min hashing and cache
     val minHashedRdd = documentRdd.map((f: Document) => {
       val minHashing:MinHashing = new MinHashing(n)
       f.setMinHash(minHashing.buildMinHash(f.getShingling().shingles))
       f
     }).persist(StorageLevel.MEMORY_AND_DISK)
+
 
     //Do comaprisons with the min hash
     minHashedRdd.cartesian(minHashedRdd).filter((f: (Document, Document)) =>{
@@ -86,6 +89,7 @@ object Main {
     }).sortBy(_._1, false).top(20).foreach((f: (Float, String, String)) => {
       println("MinHASH => Rating: " + f._1 + " DocumentA:" + f._2 + " Document B:" + f._3)
     })
+
 
     //Perform the LSH
     val bandsRdd = minHashedRdd.map((f: Document) => {
@@ -107,3 +111,4 @@ object Main {
     })
   }
 }
+
